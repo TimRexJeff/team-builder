@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 const Create = props => {
   const [newPeep, setNewPeep] = useState({
-    title: "",
-    body: ""
+    name: "",
+    email: "",
+    role: ""
   });
 
   const handleChange = event => {
@@ -21,8 +22,9 @@ const Create = props => {
   const resetForm = event => {
     event.preventDefault();
     setNewPeep({
-      title: "",
-      body: ""
+      name: "",
+      email: "",
+      role: ""
     });
   };
 
@@ -30,12 +32,21 @@ const Create = props => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="title"
-        placeholder="Title"
+        name="name"
+        placeholder="Name"
         onChange={handleChange}
-        value="Hello"
       />
-      <textarea name="body" onChange={handleChange} value={newPeep.body} />
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+      />
+      <select>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
 
       <button type="submit">Submit</button>
       <button type="button" onClick={resetForm}>
